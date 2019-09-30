@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/boranyildirim/Desktop/c++ final çalısma/LinkedList/LinkedList.cpp
+LinkedList.h
+/Users/boranyildirim/Desktop/c++ final çalısma/LinkedList/LinkedList.h
+iostream
+-
+
+/Users/boranyildirim/Desktop/c++ final çalısma/LinkedList/LinkedList.h
+
+/Users/boranyildirim/Desktop/c++ final çalısma/LinkedList/main.cpp
+LinkedList.h
+/Users/boranyildirim/Desktop/c++ final çalısma/LinkedList/LinkedList.h
+
