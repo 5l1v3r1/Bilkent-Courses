@@ -1,0 +1,3 @@
+/* We will create the Snowman class, and draw it in our init() method. The Snowman class will consist of two ovals for the head and the body, and a message to display (which will also be drawn on the screen). The code is as follows. */
+
+Snowman -> Ellie { Ellie snowmanHead = Oval(); Ellie snowmanBody = Oval(); Ellie message = EllieString(m: message); drawEllie(filledState: False, fillColor: Color.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { drawOval(fs: filledState, fc: fillColor, l: headLoc, s: headSize); Loc headLoc = Loc(x: 3, y: 5); drawOval(fs: filledState, fc: fillColor, l: loc, s: size); drawString(fs: filledState, fc: fillColor, text: message);}}

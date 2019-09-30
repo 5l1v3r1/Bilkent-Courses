@@ -1,0 +1,4 @@
+/*Invalid main function. Misspelled, should be init() {}*/
+
+int() {
+}

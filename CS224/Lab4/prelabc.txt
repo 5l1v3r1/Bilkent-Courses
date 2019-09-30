@@ -1,0 +1,20 @@
+"bge" :
+bge $t2, $t7, TopLoop
+
+IM[PC]
+R[$rd] ← R[$rs] < R[$rt]
+if(R[$rd] <= 0)
+	PC ← PC + 4 + SignExt18b({imm, 00})
+else
+	PC ← PC + 4
+
+
+"swapRM" :
+
+swapRM $v0, 1004($sp)
+
+IM[PC]
+R[$rt] ← Mem4B(R[$rs] + SignExt16b(imm))
+R[$rd] ← R[$rs] + R[$rt]
+Mem4B(R[$rs] + SignExt16b(imm)) ← R[$rt]
+PC ← PC + 4

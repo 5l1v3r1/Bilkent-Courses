@@ -1,0 +1,12 @@
+Ellie says: expression identifier
+Ellie says: syntax error
+Ellie says: You forgot semicolon around line 4
+Ellie says: You forgot semicolon around line 4
+Ellie says: You forgot semicolon around line 4
+Ellie says: You forgot semicolon around line 4
+Ellie says: expression identifier
+Ellie says: You forgot semicolon around line 4
+Ellie says: Invalid class creation around line 4
+Ellie says: semicolon
+Ellie says: main function
+Ellie says: main function is fine

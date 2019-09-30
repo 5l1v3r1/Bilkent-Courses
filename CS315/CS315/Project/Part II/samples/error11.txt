@@ -1,0 +1,5 @@
+/*Arguments list have 2 extra commas at the end*/
+
+asd(x: Int, y: String,,) {
+	; //empty function body
+}

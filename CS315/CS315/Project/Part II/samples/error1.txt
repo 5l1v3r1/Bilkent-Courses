@@ -1,0 +1,4 @@
+/*Most common mistake. Forgot to put the semicolon*/
+init() {
+	x = 5
+}

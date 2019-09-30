@@ -1,0 +1,8 @@
+/*for loop range selector must have three dots. The one has 2*/
+
+init() {
+	;
+
+	for index in 1..5 {
+	}
+}

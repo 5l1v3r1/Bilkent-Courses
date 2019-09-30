@@ -1,0 +1,13 @@
+1) Please read the below case carefully and by using MS Project 2000 (you can find it at B and G Labs) generate a 
+GANTT Chart in order to display the relation between the tasks of the case. 
+You have to show the major 4 tasks as milestones (we composed a milestone by giving indentation to the sub-tasks as discussed at our lab session) 
+and all the sub-tasks that were defined in the case. 
+Moreover, assume that there are 3 teams (Team A, Team B & Team C)that were assigned to that project. 
+If collaborative work is required to implement this project on time, 
+how can you assign them to the tasks so that they will have equal (almost) work load at the end? Finally, 
+is it possible to finish that project in 7 months as mentioned on the case? Show the overall duration of the project 
+by adding a milestone (with the name ARPA BPM) at the top.
+IMPORTANT: Instead of 'days' you have to show 'weeks' under Duration part!
+
+2) Please generate a PERT Analysis in order to prove the duration that you have calculated by MS Project. 
+Also, mention the alternative paths by using MS Word (1 page document, you may use Insert/Shapes)

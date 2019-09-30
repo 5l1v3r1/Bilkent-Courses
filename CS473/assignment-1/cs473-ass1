@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{algorithmic}
+
+\title{CS473 ASSIGNMENT-1}
+\author{Boran Yildirim \and Yigit Bediskan}
+\date{February 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+\begin{enumerate}[label=(\alph*)]
+
+\item \quad \textbf{\textit{Loop Invariant:}} $gcd(a, b) = gcd(x, y) \quad and \quad x >= 0 \quad and \quad y >= 0$
+
+\item
+    \quad \textbf{\textit{Initialization:}} At the beginning of the first iteration x is still equal to a, and y is still equal to b, therefore, \[gcd(a, b) = gcd(x, y) \quad and \quad x >= 0 \quad and \quad y >= 0\]
+    \quad \textbf{\textit{Maintanence:}} Assume that at the beginning of the $i$th iteration,\[gcd(a, b) = gcd(x, y) \quad and \quad x >= 0 \quad and \quad y >= 0\] \quad \quad  In the $i$th iteration, if $(x > y)$, then $x_1 = x - y$, $x_1$ is positive, and $gcd(x_1, y) = gcd(a, b)$, because any number that divides $x$ and $y$ also divides $x - y$, else if $(x < y)$, then $y_1 = y - x$, $y_1$ is positive, and $gcd(x, y_1) = gcd(a, b)$, because any number that divides $x$ and $y$ also divides $y - x$. \[\]
+\item \quad \textbf{\textit{Termination:}} The loop terminates when x = y. At this point, since $gcd(a, b) = gcd(x, y) \quad and \quad x >= 0 \quad and \quad y >= 0$ Thus the procedure returns x.
+\end{enumerate}
+
+\newpage
+\section{}
+\begin{enumerate}[label=(\alph*)]
+\item \quad 
+\begin{algorithmic}
+\REQUIRE A, B, n
+\STATE $i\gets 0$ 
+\STATE $j\gets n - 1$ 
+
+\WHILE{$i < n \quad \AND \quad j > 0$} 
+    \STATE $tmp\gets A[i] + B[j]$
+    \IF{$tmp == x$} 
+        \RETURN FOUND 
+    \ELSIF{$tmp > x$} 
+        \STATE{$j\gets j - 1$ } 
+    \ELSIF{$tmp < x$} 
+        \STATE{$i\gets i + 1$ }  
+    \ENDIF
+\ENDWHILE
+
+\STATE \RETURN NOTFOUND
+
+\end{algorithmic}
+
+\item It is attached at the end of the report and handled with worst case together.
+
+\item 
+    
+\item It is attached at the end of the report and handled with explanation of how algorithm work.
+\end{enumerate}
+
+\newpage
+\section{}
+Model: MacBook Pro (Retina, 15-inch, Mid 2015) \\
+CPU: 2,2 GHz Intel Core i7 \\
+RAM: 16 GB 1600 MHz DDR3 \\
+Operating System: macOS High Sierra
+
+\begin{enumerate}[label=(\alph*)]
+
+\item 
+    The arrays are randomly generated for both of them with same values. After the size of array become greater than $2^8$, Merge-Sort become more efficient than Insertion-Sort. Merge-Sort has a more variable run time for different instances that have the same size since it has $O(2n)$ space complexity where Insertion-Sort has $O(n)$. \[\]
+        \begin{tabular}{ | l | l | l |}
+        \hline
+        n & Insertion Sort & Merge Sort \\ \hline
+        $2^4$ & 1e-06 & 6e-06 \\ \hline
+        $2^8$ & 4.9e-05 & 3.4e-05 \\ \hline
+        $2^{12}$ & 0.012053 & 0.0006336 \\ \hline
+        $2^{16}$ & 3.03937 & 0.012187 \\ \hline
+        $2^{20}$ & $\infty$ & 0.259265 \\ \hline
+        \end{tabular}\[\]
+\item 
+    The worst case for Insertion-Sort is with numbers in descending order in that case. The critical value of $n$ in this case is approximately $2^6$.\[\]
+     \begin{tabular}{ | l | l | l |}
+        \hline
+        n & Insertion Sort & Merge Sort \\ \hline
+        $2^4$ & 1e-06 & 6e-06 \\ \hline
+        $2^8$ & 9.7e-05 & 2.2e-05 \\ \hline
+        $2^{12}$ & 0.028046 & 0.00036 \\ \hline
+        $2^{16}$ & 6.31218 & 0.009998 \\ \hline
+        $2^{20}$ & $\infty$ & 0.138445 \\ \hline
+    \end{tabular}
+\end{enumerate}
+\[\] \quad Plots of the runtime of each algorithm are attached at the end of report.
+
+
+\end{document}

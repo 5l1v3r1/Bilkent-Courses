@@ -1,0 +1,126 @@
+init () { //this is the entry point of our program
+
+	Ellie oval = Oval();
+	/* draw 10 ovals next to each other horizontally, without specifying absolute values for width and height */
+	oval.drawEllie(filledstate: False, fillColor: Color.Pink, count: 10);
+
+	//Supports Primitive Types, logical operations and and concat
+	Int primInt = 5;
+	Float primDouble = 3.14;
+	Bool primBool = True;
+
+	String hello = "Hello "
+	String world = "World"
+
+	String helloWorld = hello + word; //helloWorld holds "Hello World"
+
+	String pi = Stringify(primDouble) //Stringify is out toString() method
+	Double e = Floatify("2.7182") //Floatify is our Double.parse() method
+
+	Int remainder = 10 % 4; //remainder holds 2
+	//End of types section
+
+	//Example for drawing an oval with specified location, colour and dimensions
+	Color ovalColor = Color(r: 70, g: 90, b: 155);
+	Loc ovalLoc = Loc(x: 5, y: 3);
+	Size ovalSize = Size(height: 10, width: 8);
+	Ellie oval = Oval();
+	oval.drawEllie(filledState: False, fillColor: ovalColor, loc: ovalLoc, size: ovalSize);
+
+	//get methods do not have "get" prefixes like java
+	Int ovalLocX = ovalLoc.X;
+	Int ovalSize = ovalSize.Length;
+
+	//Example of drawing a rectangle with specified location, colour and dimensions
+	Color rectColor = Color.Pink; //colour should provide a predefined set
+	Loc rectLoc = Loc(x: 10, y: 25);
+	Size rectSize = Size(height: 30, width: 10);
+	Ellie rect = Rect();
+	rect.drawEllie(filledState: True, fillColor: rectColor, loc: rectLoc, size: rectSize);
+
+	//Example of drawing a line with direction
+	Color lineColor = Color(r: 70, g: 90, b: 155);
+	Loc lineLoc = Loc(x: 22, y: 90);
+	Size lineSize = Size(height: 100); //width is an optional parameter for the Size class
+	Ellie line = Line(direction: "SW");
+	line.drawEllie(loc: lineLoc, size: lineSize);
+
+	Loc stringLoc = Loc(x:23, y: 88);
+	Size stringSize = Size(height: 20); //the height of the text is 20 pixels. Width depends on the height of the string
+	Ellie stringDrawing = EllieString("Hello World");
+	stringDrawing.drawEllie(loc: stringLoc, size: stringSize); //colour parameter is not provided here since it is an optional. Defaults to black.
+
+	//Example of drawing a rectangle with rounded corners
+	Ellie rect = Rect(cornerRadius: 4);
+	rect.drawEllie(); //this is the usage of drawEllie with minimum parameters. It will draw a black rectangle with rounded corners inside the bounding boxes of the application window.
+
+	//Example of defining your own shapes
+
+	Snowman -> Ellie { //We will be creating a class called Snowman, which extends Ellie. We say “->” instead of "extends"
+
+		Snowman(message);
+
+		Ellie head = Oval();
+		Ellie body = Oval();
+		Ellie message = EllieString(message); //message will have the default optional parameters
+
+		
+
+		//this is the perfect spot to show the optional parameters
+		drawEllie(filledState = False, fillColor = Color.Black, loc = Ellie.DefaultLoc, size = Ellie.DefaultSize, count = 1) { //Ellie.DefaultLoc is provided as Loc(x: 0, y:0)
+			Size headSize = Size(height: size.Length * 0.4);//this is the ratio of the head over the body in case the user draws this inside a bounding box
+
+			drawOval(fs: filledState, fc: fillColor, l: loc, s: headSize);
+			drawOval(fs: filledState, fc: fillColor, l: loc, s: snowmanSize);
+			drawString(text: message);
+		}
+
+		//Oval's width is the same as the height unless specified. It is an optional parameter as well.	
+	}
+
+	//this will draw a snowman with head size 4, body size 10 and the following message
+	Size mrSnowmansSize = Size(height: 10);
+	Ellie mrSnowman = Snowman(message: "Frozen 2 is coming!");
+	mrSnowman.drawEllie(filledState: False, fillColor = Color.Black, size: mrSnowmansSize);
+
+	//For loop example
+	for index in 1...5 {
+		Color lineColor = Color(r: 70, g: 90, b: 155);
+		Loc lineLoc = Loc(x: 22, y: 90);
+		Size lineSize = Size(height: index); //height of the line changes with index
+		Ellie line = Line(direction: "SW");
+		line.drawEllie(loc: lineLoc, size: lineSize);
+	}
+
+	//While loop example
+	Int x = 5;
+	while (x > 0) {
+		Color lineColor = Color(r: 70, g: 90, b: 155);
+		Loc lineLoc = Loc(x: 22, y: 90);
+		Size lineSize = Size(height: x); //length of the line changes with x
+		Ellie line = Line(direction: "SW");
+		line.drawEllie(loc: lineLoc, size: lineSize);
+		x = x - 1;
+	}
+
+	//if -> whether
+	whether ( x == 5 ) {
+		//do sth
+	}
+	//proviso -> else
+	proviso whether ( x <= 3 ) {
+		//do sth else
+	}
+
+	proviso {
+		//do proviso
+	}
+
+	drawSomething();
+}
+
+//Example of a function
+drawSomething() {
+	Ellie rect = Rect(cornerRadius: 4);
+	rect.drawEllie();
+}

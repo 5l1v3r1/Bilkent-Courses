@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/main.cpp
+sorting.h
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/sorting.h
+ctime
+-
+iostream
+-
+cmath
+-
+
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/sorting.cpp
+sorting.h
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/sorting.h
+iostream
+-
+
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/sorting.h
+

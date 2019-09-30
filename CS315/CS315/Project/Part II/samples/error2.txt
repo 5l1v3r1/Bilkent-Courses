@@ -1,0 +1,4 @@
+/*Invalid class declaration. Forgot to put right paranthesis*/
+init() {
+	Ellie oval = Oval(;
+}

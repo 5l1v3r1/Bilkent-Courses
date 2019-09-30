@@ -1,0 +1,8 @@
+Some text
+/* a comment (1) */
+Some more text
+This is an /* in-line (2) */ comment
+/* problem comment (3) */ do_my_thing("oops */");
+This is a /* multi-line 
+comment (4) */
+Hooray!

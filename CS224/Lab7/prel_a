@@ -1,0 +1,56 @@
+int pattern = 0xBC;
+int temp = 0xBC;
+int disabled = 0;
+
+ 
+void main() {
+  AD1PCFG = 0xFFFF;
+ 
+  DDPCON.JTAGEN = 0; // disable JTAG
+ 
+  TRISA = 0x00;  //portA is output to turn on LEDs.
+  TRISE = 0XFF;  //portE is inputs to read push-buttons.
+ 
+  LATA = pattern;       // turn OFF the PORTA leds
+  LATE = 0X00;       // turn OFF the PORTE led ( single green LED on PIC32 Beti)
+ 
+  while(1) {
+      if (portE == 0x03) {
+          if (disabled == 1) {
+              LATA = temp;
+              disabled = 0;
+          }
+          if (LATA % 2 == 1) {
+              LATA = LATA >> 1;
+              LATA = LATA + 0x80;
+          }    
+          else {
+              LATA = LATA >> 1;
+          }
+   	  Delay_ms(1000);
+      }
+   
+      if (portE == 0x01) {
+          if (disabled == 1) {
+              LATA = temp;
+              disabled = 0;
+          }
+          if (LATA / 0x80 == 1){
+              LATA = LATA << 1;
+              LATA = LATA + 1;
+          }
+          else{
+              LATA = LATA << 1;
+          }
+          Delay_ms(1000);
+      }
+   
+      if (portE % 2 != 1) {
+          if (disabled == 0){
+              temp = LATA;
+              LATA = 0xFF;
+              disabled = 1;
+          }
+      }
+ }
+}

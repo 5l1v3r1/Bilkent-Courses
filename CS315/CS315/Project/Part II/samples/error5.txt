@@ -1,0 +1,5 @@
+/*Invalid class initialisation. Missing type of snowman. It should have been inherited from Ellie.*/
+
+init() {
+	snowman = Snowman(m: message); 
+}

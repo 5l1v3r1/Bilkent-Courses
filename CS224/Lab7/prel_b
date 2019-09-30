@@ -1,0 +1,45 @@
+#define SW1 PORTCbits.RC0
+
+unsigned char  const SEGMENT_MAP[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+
+void main(void) {
+    TRISB = 0x00;                   //Set PortB to all outputs
+    TRISCbits.RC0=0x01;             //Set PortC.0 asinput
+    OSCCON = 0X76;                  //SET fOR INTERNAL OSCCILATOR
+    char digit=0;
+     
+    while(1){
+        //Check if switch SW1 is closed
+        if (!SW1) {
+          for(int i = 0; i < 20; i++)       
+              Delay_ms(1000);   //wait for 100ms
+         
+          //Check if switch SW1 is still closed
+          if (!SW1) {
+              PORTB = (SEGMENT_MAP[digit]);
+
+              for (int i = 0; i < 20; i++) 
+                    Delay_ms(1000);   //wait for 100ms
+              digit++;
+              if (digit > 9)
+                  digit = 0;
+            }
+      }
+
+        else {
+            int n = 10, first = 0, second = 1, next;
+ 
+            for (int i = 0; i < n; i++) {
+                if ( i <= 1 )
+                    next = i;
+                else {
+                    next = first + second;
+                    first = second;
+                    second = next;
+                }
+                PORTB = next;
+            }
+        } 
+    }
+}
+

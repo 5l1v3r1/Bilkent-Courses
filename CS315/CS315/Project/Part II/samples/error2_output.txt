@@ -1,0 +1,4 @@
+Ellie says: syntax error
+Ellie says: Invalid arguments list around line 3
+Ellie says: Invalid arguments list around line 3
+Ellie says: Invalid arguments list around line 4

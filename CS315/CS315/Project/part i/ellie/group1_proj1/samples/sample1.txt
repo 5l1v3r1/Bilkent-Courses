@@ -1,0 +1,51 @@
+/* We will create the Snowman class, and draw it in our init() method. The Snowman class will consist of two ovals for the head and the body, and a message to display (which will also be drawn on the screen). The code is as follows. */
+
+// the entry point is marked by init
+// the definition of the snowman Class is below
+init () {
+	
+	// define Colour, Loc, Size and the message
+	Colour snowMColour = Colour.White;
+	Loc snowMLoc = Loc(x: 20, y: 32);
+	Size snowMSize = Size(height: 50, width: 40);
+	String snowMMessage = "Do you wanna build a snowman";
+
+	// create the Snowman object using the Snowman Class
+	Ellie snowman = Snowman(message: snowMMessage);
+
+	// draw the Snowman created
+	snowman.drawEllie(filledState: True, fillColour: snowmanColour, loc: snowMLoc, size: snowMSize);
+
+}
+
+// the Snowman Class we call in init
+Snowman -> Ellie {
+
+	// properties
+	Ellie snowmanHead = Oval();
+	Ellie snowmanBody = Oval();
+	Ellie message = EllieString(message);	
+
+	// constructor with 3 parameters
+	Snowman(message);
+
+	// methods
+	// we will override the drawEllie() method for our class
+	// we define filledState and fillColour as optionals
+	drawEllie(filledState = False, fillColor = Color.Black, loc = Ellie.DefaultLoc, size = Ellie.DefaultSize, count = 1) {
+
+		Size headSize = Size(height: size.Length * 0.25);
+		Loc headLoc = Loc(x: loc.x, y: loc.y / 4);
+
+		// draw the head
+		drawOval(fs: filledState, fc: fillColor, l: headLoc, s: headSize);
+
+		// draw the body
+		drawOval(fs: filledState, fc: fillColor, l: loc, s: size);
+
+		// draw the message which is a string
+		drawString(fs: filledState, fc: fillColor, text: message);
+
+	}
+
+}

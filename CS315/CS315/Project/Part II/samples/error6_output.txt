@@ -1,0 +1,5 @@
+Ellie says: syntax error
+Ellie says: Invalid inheritance around line 3
+Ellie says: Invalid inheritance around line 3
+Ellie says: Invalid inheritance around line 3
+Ellie says: Invalid inheritance around line 4

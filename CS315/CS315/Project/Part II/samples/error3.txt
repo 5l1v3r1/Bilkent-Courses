@@ -1,0 +1,7 @@
+/*Invalid function declaration. Type of z is unknown and must be specified like x*/
+
+foo(x: Int, z) {
+	x = 7;
+}
+
+

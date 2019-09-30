@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithmic}
+
+\title{CS473-4}
+\author{Boran Yildirim \and Duha Celik}
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+
+Assume that before {$QUERY$}, {$PRE\_PROCESS$} is called and indexed array will be used for query. An example of code piece is as below. \\
+\newline
+\begin{algorithmic}
+\STATE{$C[0..k] \gets PRE\_PROCESS(A)$}
+\STATE{$number \gets QUERY(C, a, b)$}
+\STATE
+\STATE
+\end{algorithmic}
+
+{$PRE\_PROCESS (A)$}
+
+\begin{algorithmic}
+\STATE{$ C[0..k] \gets$} new array
+\FOR{i = 0 to k}
+    \STATE{$C[i] \gets 0$} 
+\ENDFOR
+\FOR{j = 1 to A.length}
+    \STATE{$C[A[j]] \gets C[A[j]] + 1$}
+\ENDFOR
+\FOR{i = 1 to k}
+    \STATE{$C[i] \gets C[i] + C[i - 1]$}
+\ENDFOR
+\RETURN C
+\STATE
+\STATE
+\end{algorithmic}
+
+{$QUERY (C, a, b)$}
+
+\begin{algorithmic}
+\STATE {// Assume {$a > 0$} and {$b < k$}.}
+\IF{$a == 0$}
+    \RETURN C[b]
+\ELSE
+    \RETURN C[b] - C[a - 1]
+\ENDIF
+\end{algorithmic}
+
+\newpage
+
+\section{}
+
+{$SPARSE-TRANSPOSE(R, C, V, m, n, k)$}
+\begin{algorithmic}
+\STATE {$R'[0..n+1] \gets $} new array
+\STATE {$C'[0..k] \gets $} new array
+\STATE {$V'[0..k] \gets $} new array
+
+\STATE
+
+\STATE fill {$R'$} with {$0$}s
+
+\STATE
+
+\FOR{i = 0 to k}
+    \STATE {$R'[C[i]] \gets R'[C[i]]$} + 1
+\ENDFOR
+
+\STATE
+
+\STATE cumsum {$\gets 0$}
+\FOR{col = 0 to n}
+    \STATE tmp {$\gets R'[col]$}
+    \STATE {$R'[col] \gets$} cumsum
+    \STATE cumsum {$\gets$} cumsum + tmp
+\ENDFOR
+
+\STATE
+
+\FOR{i = to m}
+    \FOR{j = R[i] to R[i + 1]}
+        \STATE col {$\gets C[j]$} 
+        \STATE dest {$\gets R'[col]$}
+        \STATE {$C'[dest] \gets $} row
+        \STATE {$V' [dest] \gets V[j]$} 
+        \STATE {$R'[col] \gets R'[col] $} + 1
+    \ENDFOR
+\ENDFOR
+
+\STATE
+
+\STATE last {$\gets$} 0
+\FOR{i = 0 to n + 1}
+    \STATE tmp {$\gets R'[i]$}
+    \STATE {$R'[i] \gets $} last
+    \STATE last {$\gets$} tmp
+\ENDFOR
+
+\STATE
+
+\RETURN {$R'$}, {$C'$}, {$V'$}
+
+\end{algorithmic}
+
+\newpage
+
+\section{}
+{$Pre:$}
+
+\begin{algorithmic}
+\STATE struct element \{
+\STATE \quad int value;
+\STATE \quad element * next;
+\STATE {\}}
+\STATE int max = {$-\infty$};
+\FOR{i = 0 to n}
+    \IF{{$A[i] >$} max}
+        \STATE max {$\gets A[i]$}
+    \ENDIF
+\ENDFOR
+
+\STATE element hash[max];
+
+\FOR{i = 0 to n}
+    \STATE element e {$\gets$} new element;
+    \STATE e.value {$\gets i$}
+    \STATE e.next {$\gets hash[A[i]]$}
+    \STATE {$hash[A[i]] \gets $} e
+\ENDFOR
+\STATE
+\end{algorithmic}
+
+The Greatest element is found and indexing is done by it. Thus, collisions of different values in hashing are prevented. In a row there is only items whose values are same as their index{$(i)$}. Insertion is done to head (last one in unsorted array is the head in the list).
+
+\[\]
+\newline 
+{$Post:$}
+
+\begin{algorithmic}
+\FOR{i = n - 1 to 0}
+    \STATE{$A[i] \gets hash[A[i]].value$}
+    \STATE{$hash[A[i]] \gets hash[A[i]].next$}
+\ENDFOR
+\STATE
+\end{algorithmic}
+
+All elements from the sorted array replaced.
+
+\end{document}

@@ -1,0 +1,8 @@
+Ellie says: methodcall param
+Ellie says: syntax error
+Ellie says: Invalid arguments list around line 3
+Ellie says: Invalid arguments list around line 3
+Ellie says: expression identifier
+Ellie says: assigment
+Ellie says: semicolon
+Ellie says: funtion decleration 1

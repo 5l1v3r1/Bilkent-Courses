@@ -1,0 +1,11 @@
+bla bla bla
+/* This is 
+   a single /*
+     comment, 
+   */ not multiple 
+*/
+there we go /* here */ printf("abc */e") done 
+/* another */
+bla printf("ab/*ce") /* do */ bla
+/* abc "uw*/z" def  */
+

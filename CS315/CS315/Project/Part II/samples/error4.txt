@@ -1,0 +1,5 @@
+/*Missing object name. Loc should have an instance name*/
+
+init() {
+	Loc = Loc(x: 3, y: 4);
+}

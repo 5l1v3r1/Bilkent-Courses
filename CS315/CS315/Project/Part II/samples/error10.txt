@@ -1,0 +1,5 @@
+/*":" must be used, not "="*/
+
+init() {
+	Loc loc = Loc(y = 4); 
+}

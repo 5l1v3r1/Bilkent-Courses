@@ -1,0 +1,5 @@
+/* This time, we will create the Automobile class. The class will have a rectangle for the body and two ovals (we will do some tricks to make them circles) as wheels. The sample is found below. */
+
+// the entry point is marked by init
+// the definition of the Automobile Class is below
+init() { Colour automobileColour = Colour.Red; Color wheelColour = Colour.Black; Loc automobileLoc = Loc(x: 50, y: 10); Size automobileSize = Size(height: 100, width: 260); Ellie mercedes = Automobile(a: automobileLoc, ab: automobileSize, ac: wheelColour); mercedes.drawEllie(filledState: True, fillColour: automobileColour);}

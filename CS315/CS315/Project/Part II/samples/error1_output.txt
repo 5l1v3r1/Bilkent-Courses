@@ -1,0 +1,6 @@
+Ellie says: expression identifier
+Ellie says: assigment
+Ellie says: syntax error
+Ellie says: You forgot semicolon around line 4
+Ellie says: main function
+Ellie says: main function is fine

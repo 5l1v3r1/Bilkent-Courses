@@ -1,0 +1,9 @@
+Ellie says: integer param
+Ellie says: syntax error
+Ellie says: Invalid arguments list around line 4
+Ellie says: Invalid arguments list around line 4
+Ellie says: Invalid arguments list around line 4
+Ellie says: object creation
+Ellie says: semicolon
+Ellie says: main function
+Ellie says: main function is fine

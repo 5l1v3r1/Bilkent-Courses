@@ -1,0 +1,52 @@
+// a)
+create table Author (
+    ID int(10),
+    name char(50),
+    city char(50),
+    primary key (ID)    
+);
+
+create table Publisher (
+    pubName char(50),
+    pubCity char(50),
+    primary key (pubName)   
+);
+
+create table Book (
+    ISBN int(10),
+    title char(50),
+    soldCopies int(10),
+    price int(5),
+    publisherName char(50),
+    primary key(ISBN),   
+    foreign key(publisherName) references Publisher 
+);
+
+create table Authorship (
+    ID int(10),
+    ISBN int(10),
+    year int(4),
+    income int(10),
+    foreign key(ID) references Author,
+    foreign key(ISBN) references Book
+);
+
+
+// b)
+
+select ID, name 
+from Author,
+    lateral(select ID, count(ID) as c_ID
+            from Authorship
+            group_by ID)
+where (city = 'Ankara' or city = 'Istanbul' or city = 'Izmir' or city = 'Bursa' or city = 'Adana') and c_ID > 1;
+
+
+// c)
+
+select ISBN, title
+from Book,
+    lateral(select ISBN, count(ISBN) as c_ISBN
+            from Authorship
+            group_by ISBN)
+where c_ISBN > 1;

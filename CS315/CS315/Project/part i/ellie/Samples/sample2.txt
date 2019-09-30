@@ -1,0 +1,56 @@
+/* This time, we will create the Automobile class. The class will have a rectangle for the body and two ovals (we will do some tricks to make them circles) as wheels. The sample is found below. */
+
+// the entry point is marked by init
+// the definition of the Automobile Class is below
+init () {
+	
+	// define 2 Colours, Loc and Size
+	Colour automobileColour = Colour.Red;
+	Color wheelColour = Colour.Black;
+	Loc automobileLoc = Loc(x: 50, y: 10);
+	Size automobileSize = Size(height: 100, width: 260);
+
+	// create the Automobile object using the Automobile Class
+	Ellie mercedes = Automobile(automobileLoc, automobileSize, wheelColour);
+
+	// draw the Automobile created
+	mercedes.drawEllie(filledState: True, fillColour: automobileColour);
+
+}
+
+// the Automobile Class we call in init
+Automobile -> Ellie {
+
+	// properties
+	Ellie carBody = Rect();
+	Ellie frontWheel = Oval();
+	Ellie rearWheel = Oval();
+
+	// define the locations of the wheels
+	Loc frontWheelLoc = Loc(x: automobileLoc.x, y: (automobileLoc.y + automobileSize.Height));
+	Loc rearWheelLoc = Loc(x: automobileLoc.x + (automobileSize.Width / 2), y: (automobileLoc.y + automobileSize.Height));
+
+	// constructor with 3 parameters
+	Automobile(automobileLoc, automobileSize, wheelColour);
+
+	// methods
+	// we will override the drawEllie() method for our class
+	// we define filledState and fillColour as optionals
+	drawEllie(filledState = False, fillColor = Color.Black, loc = Ellie.DefaultLoc, size = Ellie.DefaultSize, count = 1) {
+
+		Size wheelSize = Size(height: automobileSize.Height);
+
+		// draw the body of the car
+		drawRect(l: automobileLoc, s: automobileSize, fs: filledState, fc: fillColor);
+
+		// draw the front wheel, always filled with colour
+		// for size, we enter just the width to get a circle
+		drawOval(l: frontWheelLoc, s: wheelSize, filledState: True, fillColour: wheelColour);
+
+		// same idea with the front wheel, with a slightly
+		// adjusted position
+		drawOval(l: rearWheelLoc, s: wheelSize, fs: True, fc: wheelColour);
+
+	}
+
+}

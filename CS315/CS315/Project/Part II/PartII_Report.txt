@@ -1,0 +1,7 @@
+CS 315 Part II Report
+
+During the writing of our yacc, we faced quite many challenges, though none unsolvable. To start with, yacc was an entirely new kind of compiler for us, and to be comfortable writing in that environment took a considerable amount of time and effort. Luckily, our shared group work allowed us to prevail through this challenge. At the writing of our yacc, we realised many of our sample programs could have used some work, so we had to spend time to fit them to specific yacc context, unlike the more forgiving lex. To print the errors was yet another challenge, as we printed the same error many times, couldn’t pass over it to catch more errors. In the end, we were able to write the line of the occurrence (at least approximately), and catch quite a few many errors. To say which error was caused of what typos of the code proved another challenge as well, but we were able to resolve this for some of the occurrences, the most vital ones.
+
+!!Just like real compilers, the erroneous line could be offset by 1 or 2. This is normal and expected.
+
+BNF grammar is inside the .y file

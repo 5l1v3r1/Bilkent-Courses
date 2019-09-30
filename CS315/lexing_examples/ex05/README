@@ -1,0 +1,1 @@
+Learn about the impact of pattern order: when more than one pattern match the same text, the one that comes earlier is used.

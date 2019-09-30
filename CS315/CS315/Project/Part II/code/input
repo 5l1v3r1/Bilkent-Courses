@@ -1,0 +1,1 @@
+init(){drawEllie(filledState: False, fillColor: Color.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { drawOval(fs: filledState, fc: fillColor, l: headLoc, s: headSize) Loc headLoc = Loc(x: 3, y: 5); drawOval(fs: filledState, fc: fillColor, l: loc, s: size); drawString(fs: filledState, fc: fillColor, text: message);}}

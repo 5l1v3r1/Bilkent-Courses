@@ -1,0 +1,3 @@
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/boranyildirim/Dropbox/Ders/CS202/Ass-1/cmake-build-debug/CMakeFiles/Ass_1.dir

@@ -1,0 +1,59 @@
+/* Now, it is time to combine the two classes we created so far, the Snowman and the Automobile class. Let’s see how things will shape (pun intended) when we deal with a more complex problem. The code to draw two snowmen on top of the automobile is below. */
+
+// the entry point is marked by init
+// the definition of the RiderSnowmen Class is below
+init () {
+	
+	// define 3 Colours
+	Colour snowmanColour = Colour.White;	
+	Colour automobileColour = Colour.Red;
+	Color wheelColour = Colour.Black;
+	
+	// define Loc
+	Loc riderLoc = Loc(x: 5, y: 5);
+
+	// define 2 Size
+	Size snowmanSize = Size(height: 80, width: 50);
+	Size automobileSize = Size(height: 40, width: 100);
+
+	// define the message
+	String riderMessage = "I built 2 Snowmen";
+
+	// create the RiderSnowmen object
+	Ellie frozen = RiderSnowmen(riderLoc, snowmanSize, automobileSize, message, wheelColour);
+
+	// draw the RiderSnowmen created
+	frozen.drawEllie(filledState: True, fillColourSnowman: snowmanColour, fillColourAutomobile: automobileColour);
+
+}
+
+RiderSnowmen -> Ellie {
+
+	// properties, parameters are calculated below
+	Ellie mrSnowman = Snowman(loc, snowmanSize, message);
+	Ellie mrsSnowman = Snowman(mrsSnowmanLoc, snowmanSize, message);
+	Ellie snowmanMobile = Automobile(snowmanMobileLoc, automobileSize, wheelColour);
+
+	// calculate the locations for the shapes
+	mrsSnowmanLoc = Loc(x: loc.x + snowmanSize.Width, y: loc.y);
+	snowmanMobileLoc = Loc(x: loc.x, y: loc.y +	snowmanSize.Height);
+
+	// constructor with 5 parameters
+	RiderSnowmen(loc, snowmanSize, automobileSize, message, wheelColour);
+
+	// methods
+	// we will override the drawEllie() method for our class
+	// we define filledState and two fillColour parameters as optionals
+	drawEllie(filledState = False, fillColor = Colour.Black, loc = Ellie.DefaultLoc, size = Ellie.DefaultSize, count = 1) {
+
+		// draw the first snowman
+		mrSnowman.drawEllie(filledState: filledState, fillColour: fillColourSnowman);
+
+		// draw the second snowman
+		mrsSnowman.drawEllie(filledState: filledState, fillColour: fillColourSnowman);
+
+		// draw the automobile
+		snowmanMobile.drawEllie(filledState: filledState, fillColour: fillColourAutomobile);
+
+	}
+}

@@ -1,0 +1,11 @@
+Ellie says: semicolon
+Ellie says: syntax error
+Ellie says: You forgot semicolon around line 6
+.Ellie says: You forgot semicolon around line 6
+Ellie says: You forgot semicolon around line 6
+Ellie says: You forgot semicolon around line 7
+Ellie says: main function
+Ellie says: main function is fine
+Ellie says: syntax error
+Ellie says: Invalid inheritance around line 8
+Ellie says: Invalid inheritance around line 8

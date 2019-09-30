@@ -1,0 +1,5 @@
+/* Now, it is time to combine the two classes we created so far, the Snowman and the Automobile class. Let’s see how things will shape (pun intended) when we deal with a more complex problem. The code to draw two snowmen on top of the automobile is below. */
+
+// the entry point is marked by init
+// the definition of the RiderSnowmen Class is below
+init() { Colour snowmanColour = Colour.White; Colour automobileColour = Colour.Red; Colour wheelColour = Colour.Black; Loc riderLoc = Loc(x: 5, y: 5); Size snowmanSize = Size(height: 80, width: 50); Size automobileSize = Size(height: 40, width: 100); String riderMessage = "I’ve built 2 Snowmen!"; Ellie frozen = RiderSnowmen(a: riderLoc, b: snowmanSize, c: automobileSize, d: message, e: wheelColour); frozen.drawEllie(filledState: True, fillColourSnowman: snowmanColour, fillColourAutomobile: automobileColour);}

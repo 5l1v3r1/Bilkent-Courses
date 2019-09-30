@@ -1,0 +1,5 @@
+/*Undefined Parameter. parameter undefined, must be Snowman(message: message)*/
+
+init() {
+	Snowman snowman = Snowman(message);
+}

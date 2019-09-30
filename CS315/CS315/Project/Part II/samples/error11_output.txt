@@ -1,0 +1,9 @@
+Ellie says: syntax error
+Ellie says: Invalid arguments list around line 3
+Ellie says: methodcall param
+Ellie says: methodcall param
+Ellie says: syntax error
+Ellie says: Invalid arguments list around line 3
+Ellie says: Invalid arguments list around line 3
+Ellie says: semicolon
+Ellie says: funtion decleration 1

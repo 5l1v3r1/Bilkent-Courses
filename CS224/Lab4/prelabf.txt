@@ -1,0 +1,42 @@
+.data
+suc_BGE : " BGE succeeded.”
+suc_SwapRM: “SwapRM succeeded.”
+fatalError: "Fail!"
+
+.text 
+
+addi $a0, $0, 1910		## test
+li $v0, 1				## print the test
+syscall
+
+
+add $a0, $a0, $a0	 ## test
+li $v0, 1		 	 ## print test
+syscall
+
+lw $a0, 12($zero)	## test 
+li $v0, 1			## print test
+syscall
+
+### testing for beq
+beq $0, $0, branch
+li $v0, 4
+la $a0, fatalError	 ## error bqe failed
+syscall
+
+branch:  
+	j middle 			## testing for jump
+	li $v0, 4
+	la $a0, fatalError	# error j failed
+	syscall
+
+middle:
+	add $t0, $a0, $0 
+	bge $a0, $s0 		## testing for bge
+	li $v0, 4
+	la $a0,suc_BGE
+	syscall
+
+quit :  	
+	li $v0,10
+	syscall

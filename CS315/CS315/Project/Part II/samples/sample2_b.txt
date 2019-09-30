@@ -1,0 +1,4 @@
+/* This time, we will create the Automobile class. The class will have a rectangle for the body and two ovals (we will do some tricks to make them circles) as wheels. The sample is found below. */
+
+// the Automobile Class we call in init
+Automobile -> Ellie { Ellie carBody = Rect(); Ellie frontWheel = Oval(); Ellie rearWheel = Oval(); Loc frontWheelLoc = Loc(x: automobileLoc.x, y: automobileLoc.y); Loc rearWheelLoc = Loc(x: automobileLoc.x, y: automobileLoc.y); Automobile auto = Automobile(a: automobileLoc, b: automobileSize, c: wheelColour); drawEllie(filledState: False, fillColor: Color.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { drawRect(l: automobileLoc, s: automobileSize, fs: filledState, fc: fillColor); drawOval(l: frontWheelLoc, s: wheelSize, filledState: True, fillColour: wheelColour); drawOval(l: rearWheelLoc, s: wheelSize, fs: True, fc: wheelColour);}}
